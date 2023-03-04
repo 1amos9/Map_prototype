@@ -103,6 +103,3 @@ class app{
 }
 const apps=new app();
 apps._getPosition();
-
-
-
