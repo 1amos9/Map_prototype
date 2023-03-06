@@ -13,7 +13,7 @@ const inputElevation = document.querySelector('.form__input--elevation');
 let map,mapEvent;
 class workout{
     date=new date();
-    id=new (this.date()+'').slice(-10);
+    id=new (Date.now()+'').slice(-10);
     constructor(coords, distance, duration){
         this.coords=coords;
         this.distance=distance;
@@ -45,7 +45,6 @@ class Cycling extends workout{
         return this.speed;
     }
 }
-//starting to test our calcpace and calcspeed
 class app{
     #map;
     #mapEvent;
@@ -85,6 +84,20 @@ class app{
     }
     _newWorkout(){
         e.preventDefault();
+        const type=inputType.value;
+        const distance=inputDistance.value;
+        const duration=inputDuration.value;
+        if(type==="running"){
+            const cadence=+inputCadence.value;
+            if(!Number.isFinite(distance)|| !Number.isFinite(duration)||!Number.isFinite(cadence)){
+                return alert('Inputs should be a positive number!');
+            }
+        }
+        if(type==='cycling'){
+            const elevation=+inputElevation.value;
+            if(!Number.isFinite(distance)|| !Number.isFinite(duration)||!Number.isFinite(elevation)){ alert('Inputs should be a positive number!');}
+            
+        }
             //clear input field
             inputCadence.value=inputDistance.value=inputDuration.value=inputElevation.value="";
         //display on the map
