@@ -238,6 +238,7 @@ body{
   }
   @media screen and (max-width: 600px){
     body{
+      width: 100vw;
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
@@ -246,11 +247,10 @@ body{
     .workouts {
       list-style: none;
       width: 100vw;
-      height: 70vw;
-      overflow-y: scroll;
-      overflow-x: hidden;
+      height: 50vw;
     }
     #map {
+      width: 100vw;
       height: 100vw;
     }
   }
