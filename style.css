@@ -233,6 +233,7 @@ body{
   overflow-x: hidden;
 }
 #map {
+  width: 100vw;
   height: 100vw;
 }
   }
